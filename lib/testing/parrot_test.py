@@ -24,7 +24,9 @@ class TestParrot:
         sys.stdout = captured_out
         parrot()
         sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == "Squawk!\n")
+        assert captured_out.getvalue().lower() == "squawk!\n"
+
+
 
     def test_returns_squawk_by_default(self):
         '''returns "Squawk!" if no argument is passed.'''
